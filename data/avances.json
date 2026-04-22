@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "year": 2024,
+    "month": 3,
+    "monthLabel": "Marzo 2024",
+    "phase": "Movimiento de suelos",
+    "progress": 15,
+    "images": [
+      { "src": "/avances/2024-03-01.jpg", "alt": "Inicio de movimiento de suelos" },
+      { "src": "/avances/2024-03-02.jpg", "alt": "Delimitación de sectores" },
+      { "src": "/avances/2024-03-03.jpg", "alt": "Vista aérea del terreno" }
+    ]
+  },
+  {
+    "id": 2,
+    "year": 2024,
+    "month": 6,
+    "monthLabel": "Junio 2024",
+    "phase": "Movimiento de suelos",
+    "progress": 35,
+    "images": [
+      { "src": "/avances/2024-06-01.jpg", "alt": "Avance de nivelación" },
+      { "src": "/avances/2024-06-02.jpg", "alt": "Apertura de calles internas" },
+      { "src": "/avances/2024-06-03.jpg", "alt": "Sector norte del proyecto" },
+      { "src": "/avances/2024-06-04.jpg", "alt": "Instalación de señalética" }
+    ]
+  },
+  {
+    "id": 3,
+    "year": 2024,
+    "month": 9,
+    "monthLabel": "Septiembre 2024",
+    "phase": "Infraestructura",
+    "progress": 52,
+    "images": [
+      { "src": "/avances/2024-09-01.jpg", "alt": "Tendido de redes eléctricas" },
+      { "src": "/avances/2024-09-02.jpg", "alt": "Sistema de agua potable" },
+      { "src": "/avances/2024-09-03.jpg", "alt": "Pavimentación de accesos" }
+    ]
+  },
+  {
+    "id": 4,
+    "year": 2024,
+    "month": 12,
+    "monthLabel": "Diciembre 2024",
+    "phase": "Infraestructura",
+    "progress": 68,
+    "images": [
+      { "src": "/avances/2024-12-01.jpg", "alt": "Red cloacal completada" },
+      { "src": "/avances/2024-12-02.jpg", "alt": "Iluminación pública instalada" },
+      { "src": "/avances/2024-12-03.jpg", "alt": "Vista general del avance" },
+      { "src": "/avances/2024-12-04.jpg", "alt": "Sector de lagunas en construcción" }
+    ]
+  },
+  {
+    "id": 5,
+    "year": 2025,
+    "month": 3,
+    "monthLabel": "Marzo 2025",
+    "phase": "Amenities",
+    "progress": 78,
+    "images": [
+      { "src": "/avances/2025-03-01.jpg", "alt": "Construcción del Club House" },
+      { "src": "/avances/2025-03-02.jpg", "alt": "Piscinas en proceso" },
+      { "src": "/avances/2025-03-03.jpg", "alt": "Canchas de tenis delimitadas" }
+    ]
+  },
+  {
+    "id": 6,
+    "year": 2025,
+    "month": 6,
+    "monthLabel": "Junio 2025",
+    "phase": "Amenities",
+    "progress": 90,
+    "images": [
+      { "src": "/avances/2025-06-01.jpg", "alt": "Club House casi terminado" },
+      { "src": "/avances/2025-06-02.jpg", "alt": "Laguna principal finalizada" },
+      { "src": "/avances/2025-06-03.jpg", "alt": "Parques y senderos inaugurados" },
+      { "src": "/avances/2025-06-04.jpg", "alt": "Gimnasio equipado" }
+    ]
+  }
+]
