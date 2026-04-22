@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
+import TreeIntro from "@/components/TreeIntro";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
       className={`${inter.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-stone overflow-x-hidden">
+        <TreeIntro />
         {children}
       </body>
     </html>
