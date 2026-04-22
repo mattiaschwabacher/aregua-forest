@@ -7,9 +7,9 @@
     "phase": "Movimiento de suelos",
     "progress": 15,
     "images": [
-      { "src": "/avances/2024-03-01.jpg", "alt": "Inicio de movimiento de suelos" },
-      { "src": "/avances/2024-03-02.jpg", "alt": "Delimitación de sectores" },
-      { "src": "/avances/2024-03-03.jpg", "alt": "Vista aérea del terreno" }
+      { "src": "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800&q=80", "alt": "Vista aérea del terreno" },
+      { "src": "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=800&q=80", "alt": "Entorno forestal del predio" },
+      { "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80", "alt": "Senderos naturales" }
     ]
   },
   {
@@ -20,10 +20,10 @@
     "phase": "Movimiento de suelos",
     "progress": 35,
     "images": [
-      { "src": "/avances/2024-06-01.jpg", "alt": "Avance de nivelación" },
-      { "src": "/avances/2024-06-02.jpg", "alt": "Apertura de calles internas" },
-      { "src": "/avances/2024-06-03.jpg", "alt": "Sector norte del proyecto" },
-      { "src": "/avances/2024-06-04.jpg", "alt": "Instalación de señalética" }
+      { "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80", "alt": "Apertura de calles internas" },
+      { "src": "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800&q=80", "alt": "Avance de nivelación — sector norte" },
+      { "src": "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=800&q=80", "alt": "Vista aérea del proyecto" },
+      { "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80", "alt": "Delimitación de sectores" }
     ]
   },
   {
@@ -34,9 +34,9 @@
     "phase": "Infraestructura",
     "progress": 52,
     "images": [
-      { "src": "/avances/2024-09-01.jpg", "alt": "Tendido de redes eléctricas" },
-      { "src": "/avances/2024-09-02.jpg", "alt": "Sistema de agua potable" },
-      { "src": "/avances/2024-09-03.jpg", "alt": "Pavimentación de accesos" }
+      { "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80", "alt": "Accesos y vialidad" },
+      { "src": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?auto=format&fit=crop&w=800&q=80", "alt": "Infraestructura de servicios" },
+      { "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", "alt": "Iluminación perimetral" }
     ]
   },
   {
@@ -47,10 +47,10 @@
     "phase": "Infraestructura",
     "progress": 68,
     "images": [
-      { "src": "/avances/2024-12-01.jpg", "alt": "Red cloacal completada" },
-      { "src": "/avances/2024-12-02.jpg", "alt": "Iluminación pública instalada" },
-      { "src": "/avances/2024-12-03.jpg", "alt": "Vista general del avance" },
-      { "src": "/avances/2024-12-04.jpg", "alt": "Sector de lagunas en construcción" }
+      { "src": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80", "alt": "Lotes delimitados — sector A" },
+      { "src": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80", "alt": "Infraestructura completada" },
+      { "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80", "alt": "Sector de lagunas en construcción" },
+      { "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80", "alt": "Pavimentación de accesos" }
     ]
   },
   {
@@ -61,9 +61,9 @@
     "phase": "Amenities",
     "progress": 78,
     "images": [
-      { "src": "/avances/2025-03-01.jpg", "alt": "Construcción del Club House" },
-      { "src": "/avances/2025-03-02.jpg", "alt": "Piscinas en proceso" },
-      { "src": "/avances/2025-03-03.jpg", "alt": "Canchas de tenis delimitadas" }
+      { "src": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?auto=format&fit=crop&w=800&q=80", "alt": "Club House en construcción" },
+      { "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80", "alt": "Piscinas y lagunas en proceso" },
+      { "src": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80", "alt": "Área deportiva" }
     ]
   },
   {
@@ -74,10 +74,10 @@
     "phase": "Amenities",
     "progress": 90,
     "images": [
-      { "src": "/avances/2025-06-01.jpg", "alt": "Club House casi terminado" },
-      { "src": "/avances/2025-06-02.jpg", "alt": "Laguna principal finalizada" },
-      { "src": "/avances/2025-06-03.jpg", "alt": "Parques y senderos inaugurados" },
-      { "src": "/avances/2025-06-04.jpg", "alt": "Gimnasio equipado" }
+      { "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", "alt": "Club House finalizado" },
+      { "src": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80", "alt": "Residencias de referencia" },
+      { "src": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80", "alt": "Ingreso principal" },
+      { "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80", "alt": "Parques y senderos inaugurados" }
     ]
   }
 ]

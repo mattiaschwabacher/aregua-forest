@@ -1,31 +1,32 @@
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 
 const team = [
   {
     name: "Franco Bertoni",
     role: "Gerente de Ventas",
-    initial: "FB",
+    photo: "https://i.pravatar.cc/300?img=11",
     whatsapp: "595981000001",
     message: "Hola Franco, me interesa conocer más sobre Areguá Forest.",
   },
   {
     name: "Betania Toledo",
     role: "Asesora Comercial",
-    initial: "BT",
+    photo: "https://i.pravatar.cc/300?img=47",
     whatsapp: "595981000002",
     message: "Hola Betania, me interesa conocer más sobre Areguá Forest.",
   },
   {
     name: "David Echeverría",
     role: "Asesor Comercial",
-    initial: "DE",
+    photo: "https://i.pravatar.cc/300?img=12",
     whatsapp: "595981000003",
     message: "Hola David, me interesa conocer más sobre Areguá Forest.",
   },
   {
     name: "Max Da Silva Mello",
     role: "Asesor Comercial",
-    initial: "MS",
+    photo: "https://i.pravatar.cc/300?img=15",
     whatsapp: "595981000004",
     message: "Hola Max, me interesa conocer más sobre Areguá Forest.",
   },
@@ -53,10 +54,15 @@ export default function Team() {
               key={member.name}
               className="bg-white p-10 group hover:bg-cream transition-colors duration-300"
             >
-              <div className="w-16 h-16 rounded-full bg-forest/10 flex items-center justify-center mb-6 group-hover:bg-forest transition-colors duration-300">
-                <span className="font-heading text-xl font-light text-forest group-hover:text-white transition-colors duration-300">
-                  {member.initial}
-                </span>
+              {/* Photo */}
+              <div className="w-20 h-20 rounded-full overflow-hidden relative mb-6 ring-2 ring-stone/10 group-hover:ring-forest/30 transition-all duration-300">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                />
               </div>
 
               <h3 className="font-heading text-xl font-light text-stone mb-1">

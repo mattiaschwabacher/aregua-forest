@@ -3,11 +3,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const slides = [
   {
     id: 0,
-    gradient: "linear-gradient(135deg, #1A2E26 0%, #2D4A3E 50%, #1A1A1A 100%)",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80",
     eyebrow: "Areguá, Paraguay",
     title: "Donde la Naturaleza\nDefine el Lujo",
     subtitle:
@@ -17,7 +18,7 @@ const slides = [
   },
   {
     id: 1,
-    gradient: "linear-gradient(135deg, #1A1A1A 0%, #2D4A3E 60%, #4A7C59 100%)",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80",
     eyebrow: "560 Lotes · 360–630 m²",
     title: "Tu Espacio,\nTu Identidad",
     subtitle:
@@ -27,7 +28,7 @@ const slides = [
   },
   {
     id: 2,
-    gradient: "linear-gradient(160deg, #2D4A3E 0%, #1A2E26 40%, #C9A96E22 100%)",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80",
     eyebrow: "Club House · Lagunas · Deportes",
     title: "Amenities de\nPrimer Nivel",
     subtitle:
@@ -39,97 +40,77 @@ const slides = [
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
 
-  const next = useCallback(() => {
-    setDirection(1);
-    setCurrent((c) => (c + 1) % slides.length);
-  }, []);
-
-  const prev = useCallback(() => {
-    setDirection(-1);
-    setCurrent((c) => (c - 1 + slides.length) % slides.length);
-  }, []);
+  const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + slides.length) % slides.length), []);
 
   useEffect(() => {
     const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   }, [next]);
 
-  const slide = slides[current];
-
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          key={current}
-          custom={direction}
-          variants={{
-            enter: (d: number) => ({ x: d * 80, opacity: 0 }),
-            center: { x: 0, opacity: 1 },
-            exit: (d: number) => ({ x: d * -80, opacity: 0 }),
-          }}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute inset-0"
-          style={{ background: slide.gradient }}
-        />
-      </AnimatePresence>
+      {/* Preload all slides, fade active one */}
+      {slides.map((slide, i) => (
+        <div
+          key={slide.id}
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          <Image
+            src={slide.image}
+            alt={slide.eyebrow}
+            fill
+            priority={i === 0}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-stone/55" />
+        </div>
+      ))}
 
-      {/* Noise texture overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
-        }}
-      />
-
-      {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white/5 to-transparent pointer-events-none" />
+      {/* Bottom vignette */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-stone/30 to-transparent pointer-events-none z-10" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-6 max-w-7xl mx-auto">
+      <div className="relative z-20 h-full flex flex-col justify-center px-6 max-w-7xl mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="max-w-2xl"
           >
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-4 font-light">
-              {slide.eyebrow}
+              {slides[current].eyebrow}
             </p>
             <h1 className="font-heading text-6xl md:text-8xl font-light text-white leading-[1.05] tracking-tight mb-6 whitespace-pre-line">
-              {slide.title}
+              {slides[current].title}
             </h1>
-            <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-md mb-10 font-light">
-              {slide.subtitle}
+            <p className="text-white/65 text-sm md:text-base leading-relaxed max-w-md mb-10 font-light">
+              {slides[current].subtitle}
             </p>
             <a
-              href={slide.ctaHref}
-              className="inline-block border border-white/60 text-white text-xs tracking-[0.3em] uppercase px-8 py-4 hover:bg-white hover:text-stone transition-all duration-400"
+              href={slides[current].ctaHref}
+              className="inline-block border border-white/60 text-white text-xs tracking-[0.3em] uppercase px-8 py-4 hover:bg-white hover:text-stone transition-all duration-300"
             >
-              {slide.cta}
+              {slides[current].cta}
             </a>
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Slide controls */}
-      <div className="absolute bottom-12 left-6 right-6 max-w-7xl mx-auto z-10 flex items-center justify-between">
+      <div className="absolute bottom-12 left-6 right-6 max-w-7xl mx-auto z-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
           {slides.map((_, i) => (
             <button
               key={i}
-              onClick={() => {
-                setDirection(i > current ? 1 : -1);
-                setCurrent(i);
-              }}
+              onClick={() => setCurrent(i)}
               className={`h-px transition-all duration-400 ${
                 i === current ? "w-10 bg-white" : "w-4 bg-white/30"
               }`}
@@ -160,7 +141,7 @@ export default function HeroSlider() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/40"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-white/40"
       >
         <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
         <ChevronDown size={14} />

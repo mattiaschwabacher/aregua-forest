@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ImageIcon } from "lucide-react";
+import Image from "next/image";
 
 interface AvanceImage {
   src: string;
@@ -35,21 +35,16 @@ export default function ProjectProgress({ data }: Props) {
   });
 
   const months = [
-    { value: 1, label: "Ene" },
-    { value: 2, label: "Feb" },
-    { value: 3, label: "Mar" },
-    { value: 4, label: "Abr" },
-    { value: 5, label: "May" },
-    { value: 6, label: "Jun" },
-    { value: 7, label: "Jul" },
-    { value: 8, label: "Ago" },
-    { value: 9, label: "Sep" },
-    { value: 10, label: "Oct" },
-    { value: 11, label: "Nov" },
-    { value: 12, label: "Dic" },
+    { value: 1, label: "Ene" }, { value: 2, label: "Feb" }, { value: 3, label: "Mar" },
+    { value: 4, label: "Abr" }, { value: 5, label: "May" }, { value: 6, label: "Jun" },
+    { value: 7, label: "Jul" }, { value: 8, label: "Ago" }, { value: 9, label: "Sep" },
+    { value: 10, label: "Oct" }, { value: 11, label: "Nov" }, { value: 12, label: "Dic" },
   ];
 
-  const latestProgress = data.reduce((max, a) => (a.progress > max.progress ? a : max), data[0]);
+  const latestProgress = data.reduce(
+    (max, a) => (a.progress > max.progress ? a : max),
+    data[0]
+  );
 
   return (
     <section id="avances" className="py-28 bg-white">
@@ -122,7 +117,9 @@ export default function ProjectProgress({ data }: Props) {
                 return (
                   <button
                     key={m.value}
-                    onClick={() => setSelectedMonth(m.value === selectedMonth ? "all" : m.value)}
+                    onClick={() =>
+                      setSelectedMonth(m.value === selectedMonth ? "all" : m.value)
+                    }
                     className={`text-xs tracking-widest uppercase px-4 py-2 border transition-all duration-200 ${
                       selectedMonth === m.value
                         ? "bg-stone text-white border-stone"
@@ -166,14 +163,18 @@ export default function ProjectProgress({ data }: Props) {
                 {avance.images.map((img, i) => (
                   <div
                     key={i}
-                    className="aspect-[4/3] overflow-hidden bg-cream relative group"
+                    className="aspect-[4/3] overflow-hidden relative group"
                   >
-                    {/* Placeholder — replace with next/image when assets are available */}
-                    <div
-                      className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-forest/10 to-forest/30 group-hover:from-forest/20 group-hover:to-forest/50 transition-all duration-500 transform group-hover:scale-105"
-                    >
-                      <ImageIcon className="text-forest/40" size={24} strokeWidth={1} />
-                      <p className="text-[10px] text-forest/50 text-center px-4 leading-relaxed">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/40 transition-colors duration-500 flex items-end p-3">
+                      <p className="text-white text-[10px] leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
                         {img.alt}
                       </p>
                     </div>

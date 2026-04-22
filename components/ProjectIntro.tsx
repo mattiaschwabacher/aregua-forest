@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const stats = [
@@ -41,18 +42,22 @@ export default function ProjectIntro() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/5] bg-gradient-to-br from-forest/10 via-forest/20 to-forest/40 relative overflow-hidden">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-forest/30">
-                <div className="w-12 h-px bg-forest/20" />
-                <p className="text-xs tracking-[0.3em] uppercase">Vista Areguá Forest</p>
-                <div className="w-12 h-px bg-forest/20" />
-              </div>
-              {/* Decorative corner */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-forest/30" />
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-forest/30" />
+            <div className="aspect-[4/5] overflow-hidden relative">
+              <Image
+                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80"
+                alt="Areguá Forest — propiedad de lujo rodeada de naturaleza"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              {/* Subtle dark overlay for elegance */}
+              <div className="absolute inset-0 bg-stone/10" />
+              {/* Corner accents */}
+              <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-white/60 z-10" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-white/60 z-10" />
             </div>
             {/* Offset accent block */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/10 -z-10" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/15 -z-10" />
           </div>
         </div>
 
