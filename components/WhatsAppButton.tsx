@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
-const WA_NUMBER = "595981000000";
+const WA_NUMBER = "595972343516";
 const WA_MESSAGE =
   "Hola, estoy interesado/a en obtener información sobre Areguá Forest. ¿Podrían asesorarme?";
 

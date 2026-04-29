@@ -6,28 +6,28 @@ const team = [
     name: "Franco Bertoni",
     role: "Gerente de Ventas",
     photo: "https://i.pravatar.cc/300?img=11",
-    whatsapp: "595981000001",
+    whatsapp: "595972343516",
     message: "Hola Franco, me interesa conocer más sobre Areguá Forest.",
   },
   {
     name: "Betania Toledo",
     role: "Asesora Comercial",
     photo: "https://i.pravatar.cc/300?img=47",
-    whatsapp: "595981000002",
+    whatsapp: "595972343516",
     message: "Hola Betania, me interesa conocer más sobre Areguá Forest.",
   },
   {
     name: "David Echeverría",
     role: "Asesor Comercial",
     photo: "https://i.pravatar.cc/300?img=12",
-    whatsapp: "595981000003",
+    whatsapp: "595972343516",
     message: "Hola David, me interesa conocer más sobre Areguá Forest.",
   },
   {
     name: "Max Da Silva Mello",
     role: "Asesor Comercial",
     photo: "https://i.pravatar.cc/300?img=15",
-    whatsapp: "595981000004",
+    whatsapp: "595972343516",
     message: "Hola Max, me interesa conocer más sobre Areguá Forest.",
   },
 ];
@@ -96,7 +96,7 @@ export default function Team() {
           </div>
           <a
             id="contacto"
-            href="https://wa.me/595981000000?text=Hola%2C%20me%20interesa%20obtener%20información%20sobre%20Areguá%20Forest."
+            href="https://wa.me/595972343516?text=Hola%2C%20me%20interesa%20obtener%20información%20sobre%20Areguá%20Forest."
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 bg-forest text-white text-xs tracking-widest uppercase px-10 py-4 hover:bg-forest-dark transition-colors duration-300"
