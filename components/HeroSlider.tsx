@@ -28,7 +28,17 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80",
+    image: "/renders/aerea-hero-slideshow.jpg",
+    eyebrow: "Club House · Lagunas · Deportes",
+    title: "Amenities de\nPrimer Nivel",
+    subtitle:
+      "Club House, piscinas, canchas de tenis y paddle, gimnasio, senderos y una comunidad vibrante te esperan.",
+    cta: "Explorar Amenities",
+    ctaHref: "#amenities",
+  },
+  {
+    id: 3,
+    image: "/renders/beach-hero-slideshow.png",
     eyebrow: "Club House · Lagunas · Deportes",
     title: "Amenities de\nPrimer Nivel",
     subtitle:
